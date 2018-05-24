@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="edf39570-fffb-4f33-99a1-ebb923d92dd6" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="http-airport-autocomplete-flow" doc:id="14644384-b2a9-4135-9085-f3e25dea4c48" >
+		<http:listener doc:name="Listener" doc:id="5cd3087c-91d1-4dfb-a10d-0fd51fd26542" config-ref="HTTP_Listener_config" 
+			path="/airport-autocomplete"/>
+
+		<flow-ref doc:name="airport-autocomplete-flow" doc:id="44f85a8c-9813-4e4a-a028-79c3a267c3d2" name="airport-autocomplete-flow"/>
+		<ee:transform doc:name="Transform Message" doc:id="de7c3e5e-848c-4950-8a72-04b91a775c41" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload map ( payload01 , indexOfPayload01 ) -> {
+	value: payload01.value,
+	label: payload01.label
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<flow name="http-flight-affiliate-search-flow" doc:id="14644384-b2a9-4135-9085-f3e25dea4c48" >
+		<http:listener doc:name="Listener" doc:id="5cd3087c-91d1-4dfb-a10d-0fd51fd26542" config-ref="HTTP_Listener_config" 
+		path="/flight-affiliate-search"/>
+
+		<flow-ref doc:name="flight-affiliate-search-flow" doc:id="44f85a8c-9813-4e4a-a028-79c3a267c3d2" name="flight-affiliate-search-flow"/>
+		<ee:transform doc:name="Transform Message" doc:id="de7c3e5e-848c-4950-8a72-04b91a775c41" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload.results map ( payload01 , indexOfPayload01 ) -> {
+	airline: payload01.airline,
+	deepLink: payload01.deepLink,
+	flights: payload01.outbound.flights map (flight, flightIndex) -> {
+	   operating_airline:flight.operatingAirline,
+		operating_airline:flight.operatingAirline,
+		aircraft:flight.aircraft,
+		departs_at:flight.departsAt,
+		arrives_at:flight.arrivesAt,
+		origin:flight.origin.airport,
+		destination:flight.destination.airport
+	},
+	duration:payload01.outbound.duration,
+	total_price:payload01.fare.totalPrice,
+	currency:payload01.fare.currency
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

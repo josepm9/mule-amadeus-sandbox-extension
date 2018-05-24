@@ -1,0 +1,36 @@
+[
+    {
+        "airline": "UX",
+        "deepLink": "https://track.connect.travelaudience.com/dlv/verify_html_jwt/?params=eyJhbGciOiJIUzI1NiJ9.eyJhZmZfaWQiOjEwMTYsInVybCI6Imh0dHBzOi8vd3d3LmFpcmV1cm9wYS5jb20vZW4vZmxpZ2h0cy9mbGlnaHRzP3V0bV9zb3VyY2U9QW1hZGV1cytTYW5kYm94X0VOJnV0bV9tZWRpdW09bWV0YWJ1c2NhZG9yZXMmdXRtX2NhbXBhaWduPWNvcmVfTUFEX09SWSZwcmVmZXJyZWRfbGFuZGluZ19wYWdlPXNlYXJjaF9yZXN1bHRzJnRhbnNlbD1Wako4VlZneE1ESTFMRTVQUWtGSGZEa3hMalF6ZkVWVlVueG1ZemhoWXpNM1pDMDJOR1JqTFRRMU1qQXRZVGxtWlMwek9ETTROR0ZrWVRWbE1tUjhWVmclMjUzRCZhcHBlbmRfdGFuc2VsPXRydWUjL2ZsaWdodHMvZnJvbS9NQUQvdG8vT1JZL293LzA3LTA4LTIwMTgvYWR1bHRzLzEvcnQvZmFsc2Uva2lkcy8wL2JhYmllcy8wL3Jlc2lkZW50L2ZhbHNlL2J1c2luZXNzL2ZhbHNlL2NoYW5uZWwvVEFDL21rdC91cy9sYW5nL2VuIiwib2ZmZXJfaWQiOiIyOCJ9.dVZIQmusdIYAn7yTJVOwGll0MBNKX4JeS4UooplD4mI",
+        "flights": [
+            {
+                "operating_airline": "UX",
+                "aircraft": "73H",
+                "departs_at": "2018-07-08T17:20",
+                "arrives_at": "2018-07-08T19:15",
+                "origin": "MAD",
+                "destination": "ORY"
+            }
+        ],
+        "duration": "01:55",
+        "total_price": "91.43",
+        "currency": "EUR"
+    },
+    {
+        "airline": "UX",
+        "deepLink": "https://track.connect.travelaudience.com/dlv/verify_html_jwt/?params=eyJhbGciOiJIUzI1NiJ9.eyJhZmZfaWQiOjEwMTYsInVybCI6Imh0dHBzOi8vd3d3LmFpcmV1cm9wYS5jb20vZW4vZmxpZ2h0cy9mbGlnaHRzP3V0bV9zb3VyY2U9QW1hZGV1cytTYW5kYm94X0VOJnV0bV9tZWRpdW09bWV0YWJ1c2NhZG9yZXMmdXRtX2NhbXBhaWduPWNvcmVfTUFEX09SWSZwcmVmZXJyZWRfbGFuZGluZ19wYWdlPXNlYXJjaF9yZXN1bHRzJnRhbnNlbD1Wako4VlZneE1ESXhMRTVQUWtGSGZEa3hMalF6ZkVWVlVueG1ZemhoWXpNM1pDMDJOR1JqTFRRMU1qQXRZVGxtWlMwek9ETTROR0ZrWVRWbE1tUjhWVmclMjUzRCZhcHBlbmRfdGFuc2VsPXRydWUjL2ZsaWdodHMvZnJvbS9NQUQvdG8vT1JZL293LzA3LTA4LTIwMTgvYWR1bHRzLzEvcnQvZmFsc2Uva2lkcy8wL2JhYmllcy8wL3Jlc2lkZW50L2ZhbHNlL2J1c2luZXNzL2ZhbHNlL2NoYW5uZWwvVEFDL21rdC91cy9sYW5nL2VuIiwib2ZmZXJfaWQiOiIyOCJ9.ZXVf9Tb5-apTafRQcsMtGybP7cShmqAcELZkqXVgNE4",
+        "flights": [
+            {
+                "operating_airline": "UX",
+                "aircraft": "73H",
+                "departs_at": "2018-07-08T19:25",
+                "arrives_at": "2018-07-08T21:25",
+                "origin": "MAD",
+                "destination": "ORY"
+            }
+        ],
+        "duration": "02:00",
+        "total_price": "91.43",
+        "currency": "EUR"
+    }
+]

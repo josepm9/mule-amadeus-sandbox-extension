@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule 
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:amadeusSandbox="http://www.mulesoft.org/schema/mule/amadeusSandbox"
+	xmlns="http://www.mulesoft.org/schema/mule/core" 
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/amadeusSandbox http://www.mulesoft.org/schema/mule/amadeusSandbox/current/mule-amadeusSandbox.xsd">
+	<amadeusSandbox:config name="Amadeus_Travel_Innovation_Sandbox_Config" 
+		doc:name="Amadeus Travel Innovation Sandbox Config" 
+		apikey="APIKEY_HERE" />
+	<flow name="airport-autocomplete-flow">
+		<amadeusSandbox:airport-autocomplete doc:name="Flight - Airport Autocomplete" 
+			doc:id="da06c8a5-47d9-4406-bbbe-fbfd5f782465" config-ref="Amadeus_Travel_Innovation_Sandbox_Config" 
+			term="MAD" country="ES" allAirports="false"/>
+	</flow>
+</mule>

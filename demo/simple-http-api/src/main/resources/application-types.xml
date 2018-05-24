@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="AirportAutocompleteResponse" format="json">
+      <types:example format="json" location="examples/airportAutocompleteResponse.json"/>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#de7c3e5e-848c-4950-8a72-04b91a775c41">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="AirportAutocompleteResponse"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
